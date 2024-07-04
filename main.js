@@ -1,32 +1,47 @@
 const buttons = document.querySelectorAll(".btn");
+const display = document.querySelector(".calculator__display");
 let str = "";
 let hasDecimal = false;
+
+display.innerText = "0";
 
 for (const button of buttons) {
   button.addEventListener("click", (e) => {
     switch (button.innerText) {
       case "C":
-        str = "";
+        str = "0";
+        hasDecimal = false;
+
         break;
 
-      case "X":
+      case ".":
+        hasDecimal ? (str += "") : (str += ".");
+        hasDecimal = true;
+        break;
+
+      case "x":
         str += "*";
         break;
 
       case "÷":
-        str += "÷";
+        str += "/";
+        break;
+
+      case "+":
+        str += "+";
+        break;
+
+      case "-":
+        str += "-";
+        break;
+
+      case "0":
+        str += "0";
         break;
 
       case "1":
         str += "1";
-        break;
 
-      case "1":
-        str += "1";
-        break;
-
-      case "1":
-        str += "1";
         break;
       case "2":
         str += "2";
@@ -52,6 +67,11 @@ for (const button of buttons) {
       case "9":
         str += "9";
         break;
+
+      case "=":
+        str = String(eval(str));
+        break;
     }
+    display.innerText = str;
   });
 }

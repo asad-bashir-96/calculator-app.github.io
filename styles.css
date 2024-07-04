@@ -20,7 +20,9 @@ body {
 .calculator {
   background-color: #171717;
   padding: 1rem;
-  width: 500px;
+  border-radius: 0.75rem;
+  width: 350px;
+  color: #f0dfb7;
 }
 .calculator__buttons {
   display: grid;
@@ -38,6 +40,11 @@ body {
   height: 2rem;
   border-radius: 100vw;
   border: 2px solid transparent;
+}
+
+.calculator__display {
+  height: 120px;
+  font-size: 4rem;
 }
 
 .btn:hover,
