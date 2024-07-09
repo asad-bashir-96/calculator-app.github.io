@@ -3,15 +3,12 @@ const display = document.querySelector(".calculator__display");
 let str = "";
 let hasDecimal = false;
 
-display.innerText = "0";
-
 for (const button of buttons) {
   button.addEventListener("click", (e) => {
     switch (button.innerText) {
       case "C":
-        str = "0";
+        str = "";
         hasDecimal = false;
-
         break;
 
       case ".":
@@ -70,6 +67,10 @@ for (const button of buttons) {
 
       case "=":
         str = String(eval(str));
+        break;
+
+      case "%":
+        str += "%";
         break;
     }
     display.innerText = str;

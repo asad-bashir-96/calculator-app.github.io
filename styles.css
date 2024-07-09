@@ -5,7 +5,7 @@
 }
 
 html {
-  background: linear-gradient(#f0dfb7, #0a0a0a);
+  background-image: linear-gradient(to right bottom, #f0dfb7, #0a0a0a);
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -21,9 +21,13 @@ body {
   background-color: #171717;
   padding: 1rem;
   border-radius: 0.75rem;
+  min-width: 250px;
   width: 350px;
+  border: none;
   color: #f0dfb7;
+  position: relative;
 }
+
 .calculator__buttons {
   display: grid;
   gap: 0.25rem;
@@ -45,6 +49,7 @@ body {
 .calculator__display {
   height: 120px;
   font-size: 4rem;
+  text-align: right;
 }
 
 .btn:hover,
@@ -53,5 +58,9 @@ body {
 }
 
 .calculator__0 {
+  grid-column: 1/3;
+}
+
+.calculator__clear {
   grid-column: 1/3;
 }
